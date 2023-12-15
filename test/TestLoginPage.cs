@@ -2,7 +2,7 @@ namespace adam;
 
 public class LoginTests : BaseClass{
     [Test]
-    public void CheckValidLogin()
+    public void CheckValidLoginForBusinessAdmin()
     {
         webDriver.Navigate().GoToUrl(BASE_URL);
 
