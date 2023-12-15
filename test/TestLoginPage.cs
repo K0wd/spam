@@ -1,17 +1,16 @@
 namespace adam;
 
-public class Login : BaseClass{
+public class LoginTests : BaseClass{
     [Test]
     public void CheckValidLogin()
     {
         webDriver.Navigate().GoToUrl(BASE_URL);
 
-        webDriver.FindElement(ObjectMappingLoginPage.TEXT_USERNAME).SendKeys("solarone");
-        webDriver.FindElement(ObjectMappingLoginPage.TEXT_PASSWORD).SendKeys("S0lar4U");
+        webDriver.FindElement(LoginPage.TEXT_USERNAME).SendKeys(BUSINESSADMIN);
+        webDriver.FindElement(LoginPage.TEXT_PASSWORD).SendKeys(BA_PASSWORD);
 
-        webDriver.FindElement(ObjectMappingLoginPage.BUTTON_LOGIN).Click();
+        webDriver.FindElement(LoginPage.BUTTON_LOGIN).Click();
 
-        IsDisplayed(ObjectMappingDashboardPage.HEADER_DASHBOARD);
-        IsDisplayed(ObjectMappingDashboardPage.HEADER_DASHBOARD);
+        IsDisplayed(DashboardPage.HEADER_DASHBOARD);
     }
 }

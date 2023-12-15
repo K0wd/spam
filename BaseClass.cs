@@ -2,8 +2,12 @@ namespace adam;
 
 public class BaseClass
 {
+    public const string BUSINESSADMIN = "spam";
+    public const string BA_PASSWORD = "SolarPlus123!";
+
     public const string BASE_URL = "https://go.solarplus.co";
     public static IWebDriver webDriver;
+
 
     private static Uri selenoidUrl = new Uri("http://adam.southeastasia.cloudapp.azure.com:4444/wd/hub");
     private static ChromeOptions chromeOptions = new ChromeOptions();
