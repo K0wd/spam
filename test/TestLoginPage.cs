@@ -12,5 +12,6 @@ public class Login : BaseClass{
         webDriver.FindElement(ObjectMappingLoginPage.BUTTON_LOGIN).Click();
 
         IsDisplayed(ObjectMappingDashboardPage.HEADER_DASHBOARD);
+        IsDisplayed(ObjectMappingDashboardPage.HEADER_DASHBOARD);
     }
 }
