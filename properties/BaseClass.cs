@@ -1,13 +1,8 @@
 namespace adam;
 
-public class BaseClass
+public partial class BaseClass
 {
-    public const string BUSINESSADMIN = "spam";
-    public const string BA_PASSWORD = "SolarPlus123!";
-
-    public const string BASE_URL = "https://go.solarplus.co";
     public static IWebDriver webDriver;
-
 
     private static Uri selenoidUrl = new Uri("http://adam.southeastasia.cloudapp.azure.com:4444/wd/hub");
     private static ChromeOptions chromeOptions = new ChromeOptions();
@@ -20,16 +15,16 @@ public class BaseClass
             { "enableVNC", true },
             { "selenide.browserSize", "1920x1080" }
         };
+        chromeOptions.AddArgument("--disable-extensions");
+        chromeOptions.AddArgument("--clear-browser-cache");
+        chromeOptions.AddArgument("--disable-application-cache");
+        chromeOptions.AddArgument("--disable-plugins");
         chromeOptions.AddAdditionalOption("selenoid:options", selenoidOptions);
 
         webDriver = new RemoteWebDriver(selenoidUrl, chromeOptions);
         webDriver.Manage().Window.Maximize();
-    }
+        webDriver.Navigate().GoToUrl(BASE_URL);
 
-    public static void IsDisplayed(By element){
-        wait = new WebDriverWait(webDriver, TimeSpan.FromSeconds(30));
-
-        wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementExists(element));
-        Assert.IsTrue(webDriver.FindElement(element).Displayed);
+        IsDisplayed(LoginPage.BUTTON_LOGIN);
     }
 }
