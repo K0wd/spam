@@ -13,7 +13,11 @@ public partial class BaseClass
     {
         Hashtable selenoidOptions = new Hashtable {
             { "enableVNC", true },
-            { "selenide.browserSize", "1920x1080" }
+            { "enableVideo", true },
+            { "videoName", "spam-test-run"},
+            { "videoFrameRate", 30 }, 
+            { "videoCodec", "mpeg4"},
+            { "selenide.browserSize", "1920x1080" },
         };
         chromeOptions.AddArgument("--disable-extensions");
         chromeOptions.AddArgument("--clear-browser-cache");

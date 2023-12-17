@@ -3,6 +3,8 @@ namespace adam;
 public partial class Steps : BaseClass
 {
     public static void Login(string _username, string _password) {
+        IsDisplayed(LoginPage.BUTTON_LOGIN);
+
         webDriver.FindElement(LoginPage.TEXT_USERNAME).SendKeys(_username);
         webDriver.FindElement(LoginPage.TEXT_PASSWORD).SendKeys(_password);
 
