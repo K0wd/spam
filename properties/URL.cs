@@ -1,6 +1,6 @@
 namespace adam;
 
-public partial class BaseClass : Credentials
+public partial class BaseClass
 {
     public const string BASE_URL = "https://go.solarplus.co";
 

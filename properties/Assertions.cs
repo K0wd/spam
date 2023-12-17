@@ -1,6 +1,6 @@
 namespace adam;
 
-public partial class BaseClass : Credentials
+public partial class BaseClass
 {
     public static void ScrollUp(int numberOfScrolls=1){
         IJavaScriptExecutor js = (IJavaScriptExecutor)webDriver;

@@ -4,7 +4,7 @@ public partial class Steps : BaseClass
 {
 
     public static int CreateContact(string _fullName, string _address) {
-        GoTo(V4_CONTACT_URL);
+        Steps.GoTo(V4_CONTACT_URL);
 
         IsDisplayed(ContactPage.V4_NEW_CONTACT);
 
@@ -28,7 +28,7 @@ public partial class Steps : BaseClass
 
     }
     public static int CreateContact(string _fullName, string _address, string _customerRepName) {
-        GoTo(V4_CONTACT_URL);
+        Steps.GoTo(V4_CONTACT_URL);
 
         IsDisplayed(ContactPage.V4_NEW_CONTACT);
 
@@ -58,7 +58,7 @@ public partial class Steps : BaseClass
     }
 
     public static void DeleteAllContacts(){
-        GoTo(V4_CONTACT_URL);
+        Steps.GoTo(V4_CONTACT_URL);
 
         try
         {
