@@ -1,6 +1,6 @@
 namespace adam;
 
-public partial class BaseClass
+public static class Credentials
 {
     public const string PASSWORD = "SolarPlus123!";
     public const string BUSINESSADMIN = "spam";

@@ -1,22 +1,22 @@
 namespace adam;
 
-public partial class Steps : BaseClass
+public partial class Steps
 {
-    public static void Login(string _username, string _password) {
-        IsDisplayed(LoginPage.BUTTON_LOGIN);
+    public void Login(string _username, string _password) {
+        assert.IsDisplayed(LoginPage.BUTTON_LOGIN);
 
         webDriver.FindElement(LoginPage.TEXT_USERNAME).SendKeys(_username);
         webDriver.FindElement(LoginPage.TEXT_PASSWORD).SendKeys(_password);
 
         webDriver.FindElement(LoginPage.BUTTON_LOGIN).Click();
 
-        IsDisplayed(DashboardPage.HEADER_DASHBOARD);
+        assert.IsDisplayed(DashboardPage.HEADER_DASHBOARD);
     }
 
-    public static void SwitchUser(string _username, string _password) {
-        webDriver.Navigate().GoToUrl(BASE_URL);
+    public void SwitchUser(string _username, string _password) {
+        webDriver.Navigate().GoToUrl(URL.BASE_URL);
 
-        IsDisplayed(DashboardPage.APP_LAUNCHER);
+        assert.IsDisplayed(DashboardPage.APP_LAUNCHER);
 
         webDriver.FindElement(DashboardPage.APP_LAUNCHER).Click();
 
@@ -26,7 +26,7 @@ public partial class Steps : BaseClass
         }
         webDriver.FindElement(DashboardPage.APP_LAUNCHER).SendKeys(Keys.Enter);
 
-        IsDisplayed(LoginPage.BUTTON_LOGIN);
+        assert.IsDisplayed(LoginPage.BUTTON_LOGIN);
 
         Login(_username, _password);
     }

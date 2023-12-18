@@ -1,11 +1,11 @@
 namespace adam;
 
-public partial class Steps : BaseClass
+public partial class Steps
 {
-    public static void ViewContact(int id){
-        webDriver.Navigate().GoToUrl(BASE_URL + "/app/contact/" + id);
+    public void ViewContact(int id){
+        webDriver.Navigate().GoToUrl(URL.BASE_URL + "/app/contact/" + id);
 
-        IsDisplayed(ContactCRMPage.CONTACT_DETAILS);
+        assert.IsDisplayed(ContactCRMPage.CONTACT_DETAILS);
 
         Assert.IsTrue(webDriver.Url.Contains(id.ToString()));
     }
